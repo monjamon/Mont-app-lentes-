@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Lentes Ópticos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="menu-inicial">
+        <h1>Simulador de Óptica</h1>
+        <p>Selecciona el tipo de lente para comenzar:</p>
+        <button onclick="iniciarSimulacion('convergente')">Lente Convergente (f = +10cm)</button>
+        <button onclick="iniciarSimulacion('divergente')">Lente Divergente (f = -10cm)</button>
+    </div>
+
+    <div id="simulador" style="display: none;">
+        <div class="controls">
+            <h2 id="lente-titulo">Lente</h2>
+            <label>Distancia del Objeto (do): <span id="val-do">20</span> cm</label>
+            <input type="range" id="input-do" min="1" max="100" value="20">
+            <button onclick="regresarMenu()">Volver al Menú</button>
+        </div>
+
+        <canvas id="canvasOptica"></canvas>
+
+        <div class="results-panel">
+            <div class="result-box">Distancia Imagen (di): <strong id="res-di">-</strong></div>
+            <div class="result-box">Tipo: <strong id="res-tipo">-</strong></div>
+            <div class="result-box">Orientación: <strong id="res-ori">-</strong></div>
+            <div class="result-box">Focal (f): <strong id="res-f">-</strong></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
